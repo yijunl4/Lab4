@@ -65,7 +65,7 @@ public class Colosseum {
      * Sorry. The attack level must be between 1 and 49: 27 <br>
      * Enter your defense level (1-23): 24 <br>
      * Sorry. The defense level must be between 1 and 23: 23
-     *
+     * @param
      * @return tempPokemon - the Pokemon we built and are going to set our fighting Pokemon to <br>
      *         (Look, we can return objects too!)
      *         <p>
@@ -73,6 +73,16 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Please name your Pokemon");
+        tempPokemon.name = myScan.next();
+        System.out.println("How many hit points will it have? (1-50)");
+        System.out.println("Split fifty points between attack level and defense level");
+        System.out.println("Enter your attack level (1-49)");
+        int hit = myScan.nextInt();
+        if (hit >= MAX_HIT_POINTS || hit < 1) {
+            System.out.println("Sorry. Hit points must be between 1 and 50");
+        }
+        System.out.println("Enter your defense level (1-" + new String(hit));
         return tempPokemon;
     }
 
